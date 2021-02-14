@@ -37,7 +37,7 @@ let seatl = {
     {
       liEl = document.createElement('li');
       ulEl.appendChild(liEl);
-      liEl.textContent = [hours[i],' ',this.numberOFcustumer[i]];
+      liEl.textContent = `${hours[i]} :   ${this.numberOFcustumer[i]}  cookeis`;
     }
     div.appendChild(myshop);
     liEl = document.createElement('li');
@@ -80,7 +80,7 @@ let tokyo ={
     {
       liEl = document.createElement('li');
       ulEl.appendChild(liEl);
-      liEl.textContent = [hours[i],' ',this.numberOFcustumer[i]];
+      liEl.textContent = `${hours[i]} :   ${this.numberOFcustumer[i]}  cookeis`;
     }
     div.appendChild(myshop);
     liEl = document.createElement('li');
@@ -121,7 +121,7 @@ let dubai ={
     {
       liEl = document.createElement('li');
       ulEl.appendChild(liEl);
-      liEl.textContent = [hours[i],' ',this.numberOFcustumer[i]];
+      liEl.textContent = `${hours[i]}  :  ${this.numberOFcustumer[i]}  cookeis`;
     }
     div.appendChild(myshop);
     liEl = document.createElement('li');
@@ -163,7 +163,7 @@ let paris ={
     {
       liEl = document.createElement('li');
       ulEl.appendChild(liEl);
-      liEl.textContent = [hours[i],' ',this.numberOFcustumer[i]];
+      liEl.textContent = `${hours[i]}  :  ${this.numberOFcustumer[i]}  cookeis`;
     }
     div.appendChild(myshop);
     liEl = document.createElement('li');
@@ -210,7 +210,7 @@ let lima ={
     {
       liEl = document.createElement('li');
       ulEl.appendChild(liEl);
-      liEl.textContent = [hours[i],' ',this.numberOFcustumer[i]];
+      liEl.textContent = `${hours[i]} :   ${this.numberOFcustumer[i]}  cookeis`;
     }
     div.appendChild(myshop);
     liEl = document.createElement('li');
