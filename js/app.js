@@ -24,7 +24,7 @@ function hoursArray(){
   }
   let total=document.createElement('th');
   tr.appendChild(total);
-  total.textContent='total ';
+  total.textContent='Daily Location Total ';
 }
 hoursArray();
 
@@ -38,6 +38,7 @@ this.location=location;
   this.total=0;
 
 }
+
 Citys.prototype.calculate=function(){
 
   for(let i=0;i<hours.length;i++){
@@ -58,10 +59,11 @@ Citys.prototype.render=function(){
     td.textContent =this.numberOFcustumer[i];
 
   }
-  let tdFortoal=document.createElement('td');
-  tr1.appendChild(tdFortoal);
-  tdFortoal.textContent=this.total;
+  let tdFortotal=document.createElement('td');
+  tr1.appendChild(tdFortotal);
+  tdFortotal.textContent=this.total;
 };
+
 
 // eslint-disable-next-line no-undef
 let seatle = new Citys('seatle',23,65,6.3);
