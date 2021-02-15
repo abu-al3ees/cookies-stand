@@ -223,6 +223,7 @@ let lima ={
 
 
 lima.calculate();
+
 lima.render();
 
 
