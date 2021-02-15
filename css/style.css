@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(123, 148, 168);
+}
+img{
+    margin-right: 190px;
+    margin-top: 119px;
+    padding: auto;
+}
+
+a{
+    text-decoration: none;
+    color: beige;
+    font-size: 20px;
+    border: solid 1px rgba(148, 123, 92, 0.993);
+    background-color: black;
+    margin-bottom: 20px;
+}
+table{
+    margin: 50px;
+    border: 1px solid red;
+}
+th,td{
+    border:1px solid royalblue;

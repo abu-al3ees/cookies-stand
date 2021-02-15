@@ -6,236 +6,79 @@ function randomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-// eslint-disable-next-line no-unused-vars
-let seatl = {
-  location: 'seatl',
-  min:23,
-  max:65,
-  avg_cookies:6.3,
-  numberOFcustumer:[],
-  total:0,
-  calculate:function(){
-    for(let i=0;i<hours.length;i++){
-      this.numberOFcustumer.push(Math.ceil( randomValue(this.min,this.max) * this.avg_cookies));
-      this.total+=this.numberOFcustumer[i];
-    }
-    //console.log(this.total);
-  },
-  render:function() {
-    let myshop=document.createElement('div');
-    let h1=document.createElement('h1');
-    let div= document.getElementById('cookies');
-    let ulEl = document.createElement('ul');
+let div=document.getElementById('cookies');
+let table = document.createElement('table');
+div.appendChild(table);
+function hoursArray(){
+  let tr = document.createElement('tr');
+  table.appendChild(tr);
+  let theader=document.createElement('th');
+  tr.appendChild(theader);
+  theader.textContent=' ';
+  let th;
+  for(let i=0;i<hours.length;i++){
+    th=document.createElement('th');
+    tr.appendChild(th);
+    th.textContent =hours[i];
 
-    h1.textContent=this.location;
-    console.log(h1);
-    myshop.appendChild(h1);
-    // each time im creating a list item
-    myshop.appendChild(ulEl);
-    let liEl;
-    for(let i = 0 ; i <hours.length; i++)
-    {
-      liEl = document.createElement('li');
-      ulEl.appendChild(liEl);
-      liEl.textContent = `${hours[i]} :   ${this.numberOFcustumer[i]}  cookeis`;
-    }
-    div.appendChild(myshop);
-    liEl = document.createElement('li');
-    ulEl.appendChild(liEl);
-    liEl.textContent=`total is : ${this.total}`;
   }
+  let total=document.createElement('th');
+  tr.appendChild(total);
+  total.textContent='total ';
+}
+hoursArray();
 
+function Citys(location,min,max,avg_cookies){
+// eslint-disable-next-line indent
+this.location=location;
+  this.min=min;
+  this.max=max;
+  this.avg_cookies=avg_cookies;
+  this.numberOFcustumer=[];
+  this.total=0;
 
-};
-seatl.calculate();
-seatl.render();
+}
+Citys.prototype.calculate=function(){
 
-
-let tokyo ={
-  location:'Tokyo',
-  min:3,
-  max:24,
-  avg_cookies:1.2,
-  total:0,
-  numberOFcustumer:[],
-  calculate:function(){
-    for(let i=0;i<hours.length;i++){
-      this.numberOFcustumer.push(Math.ceil( randomValue(this.min,this.max) * this.avg_cookies));
-      this.total+=this.numberOFcustumer[i];
-    }
-  },
-  render:function() {
-    let myshop=document.createElement('div');
-    let h1=document.createElement('h1');
-    let div= document.getElementById('cookies');
-    let ulEl = document.createElement('ul');
-
-    h1.textContent=this.location;
-    console.log(h1);
-    myshop.appendChild(h1);
-    // each time im creating a list item
-    myshop.appendChild(ulEl);
-    let liEl;
-    for(let i = 0 ; i <hours.length; i++)
-    {
-      liEl = document.createElement('li');
-      ulEl.appendChild(liEl);
-      liEl.textContent = `${hours[i]} :   ${this.numberOFcustumer[i]}  cookeis`;
-    }
-    div.appendChild(myshop);
-    liEl = document.createElement('li');
-    ulEl.appendChild(liEl);
-    liEl.textContent=`total is : ${this.total}`;
+  for(let i=0;i<hours.length;i++){
+    this.numberOFcustumer.push(Math.ceil( randomValue(this.min,this.max) * this.avg_cookies));
+    this.total+=this.numberOFcustumer[i];
   }
 };
+Citys.prototype.render=function(){
+  let tr1 = document.createElement('tr');
+  table.appendChild(tr1);
+  let tdFORloca=document.createElement('td');
+  tr1.appendChild(tdFORloca);
+  tdFORloca.textContent=this.location;
+  let td;
+  for(let i=0;i<this.numberOFcustumer.length;i++){
+    td=document.createElement('td');
+    tr1.appendChild(td);
+    td.textContent =this.numberOFcustumer[i];
+
+  }
+  let tdFortoal=document.createElement('td');
+  tr1.appendChild(tdFortoal);
+  tdFortoal.textContent=this.total;
+};
+
+// eslint-disable-next-line no-undef
+let seatle = new Citys('seatle',23,65,6.3);
+seatle.calculate();
+seatle.render();
+let tokyo = new Citys('tokyo',3,24,1.2);
 tokyo.calculate();
 tokyo.render();
 
-
-
-let dubai ={
-  location:'Dubai',
-  min:11,
-  max:38,
-  avg_cookies:3.7,
-  total:0,
-  numberOFcustumer:[],
-  calculate:function(){
-    for(let i=0;i<hours.length;i++){
-      this.numberOFcustumer.push(Math.ceil( randomValue(this.min,this.max) * this.avg_cookies));
-      this.total+=this.numberOFcustumer[i];
-    }},
-  render:function() {
-    let myshop=document.createElement('div');
-    let h1=document.createElement('h1');
-    let div= document.getElementById('cookies');
-    let ulEl = document.createElement('ul');
-
-    h1.textContent=this.location;
-    console.log(h1);
-    myshop.appendChild(h1);
-    // each time im creating a list item
-    myshop.appendChild(ulEl);
-    let liEl;
-    for(let i = 0 ; i <hours.length; i++)
-    {
-      liEl = document.createElement('li');
-      ulEl.appendChild(liEl);
-      liEl.textContent = `${hours[i]}  :  ${this.numberOFcustumer[i]}  cookeis`;
-    }
-    div.appendChild(myshop);
-    liEl = document.createElement('li');
-    ulEl.appendChild(liEl);
-    liEl.textContent=`total is : ${this.total}`;
-  }
-
-};
-
+let dubai  = new Citys('dubai',11,38,3.7);
 dubai.calculate();
 dubai.render();
 
-
-let paris ={
-  location:'paris',
-  min:20,
-  max:38,
-  avg_cookies:2.3,
-  total:0,
-  numberOFcustumer:[],
-  calculate:function(){
-    for(let i=0;i<hours.length;i++){
-      this.numberOFcustumer.push(Math.ceil( randomValue(this.min,this.max) * this.avg_cookies));
-      this.total+=this.numberOFcustumer[i];
-    }},
-  render:function() {
-    let myshop=document.createElement('div');
-    let h1=document.createElement('h1');
-    let div= document.getElementById('cookies');
-    let ulEl = document.createElement('ul');
-
-    h1.textContent=this.location;
-    console.log(h1);
-    myshop.appendChild(h1);
-    // each time im creating a list item
-    myshop.appendChild(ulEl);
-    let liEl;
-    for(let i = 0 ; i <hours.length; i++)
-    {
-      liEl = document.createElement('li');
-      ulEl.appendChild(liEl);
-      liEl.textContent = `${hours[i]}  :  ${this.numberOFcustumer[i]}  cookeis`;
-    }
-    div.appendChild(myshop);
-    liEl = document.createElement('li');
-    ulEl.appendChild(liEl);
-    liEl.textContent=`total is : ${this.total}`;
-  }
-
-
-};
-
-
+let paris  = new Citys('paris',20,38,2.3);
 paris.calculate();
 paris.render();
 
-
-
-// eslint-disable-next-line no-unused-vars
-let lima ={
-  location:'lima',
-  min:2,
-  max:16,
-
-  avg_cookies:4.6,
-  numberOFcustumer:[],
-  total:0,
-  calculate:function(){
-    for(let i=0;i<hours.length;i++){
-      this.numberOFcustumer.push(Math.ceil( randomValue(this.min,this.max) * this.avg_cookies));
-      this.total+=this.numberOFcustumer[i];
-    }},
-  render:function() {
-    let myshop=document.createElement('div');
-    let h1=document.createElement('h1');
-    let div= document.getElementById('cookies');
-    let ulEl = document.createElement('ul');
-
-    h1.textContent=this.location;
-    console.log(h1);
-    myshop.appendChild(h1);
-    // each time im creating a list item
-    myshop.appendChild(ulEl);
-    let liEl;
-    for(let i = 0 ; i <hours.length; i++)
-    {
-      liEl = document.createElement('li');
-      ulEl.appendChild(liEl);
-      liEl.textContent = `${hours[i]} :   ${this.numberOFcustumer[i]}  cookeis`;
-    }
-    div.appendChild(myshop);
-    liEl = document.createElement('li');
-    ulEl.appendChild(liEl);
-    liEl.textContent=`total is : ${this.total}`;
-  }
-
-
-};
-
-
+let lima  = new Citys('lima',2,16,4.6);
 lima.calculate();
-
 lima.render();
-
-
-// eslint-disable-next-line no-unused-vars
-
-/*function render(){
-  let ulEl = document.createElement('ul');
-  // each time im creating a list item
-  let liEl;
-  for(let i = 0 ; i <hours.length; i++)
-  {
-    liEl = document.createElement('li');
-    ulEl.appendChild(liEl);
-    liEl.textContent = hours[i];
-  }}*/
