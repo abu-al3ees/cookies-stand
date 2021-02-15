@@ -24,7 +24,7 @@ function hoursArray(){
   }
   let total=document.createElement('th');
   tr.appendChild(total);
-  total.textContent='total ';
+  total.textContent='Daily Location Total ';
 }
 hoursArray();
 
