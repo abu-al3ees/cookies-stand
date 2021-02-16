@@ -65,6 +65,7 @@ Citys.prototype.render=function(){
   tdFortotal.textContent=this.total;
 };
 function footerRow(){
+  let megaTotal=0;
   let tr2=document.createElement('tr');
   table.appendChild(tr2);
   let thTotal=document.createElement('th');
@@ -75,9 +76,12 @@ function footerRow(){
     td=document.createElement('td');
     tr2.appendChild(td);
     td.textContent =globalArray[i];
-
+    megaTotal+=globalArray[i];
 
   }
+  let megatotal=document.createElement('td');
+  tr2.appendChild(megatotal);
+  megatotal.textContent=megaTotal;
 }
 // eslint-disable-next-line no-undef
 let seatle = new Citys('seatle',23,65,6.3);
