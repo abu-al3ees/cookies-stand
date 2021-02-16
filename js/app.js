@@ -5,7 +5,7 @@ let hours=['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm',
 function randomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
-
+let globalArray=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let div=document.getElementById('cookies');
 let table = document.createElement('table');
 div.appendChild(table);
@@ -44,6 +44,7 @@ Citys.prototype.calculate=function(){
   for(let i=0;i<hours.length;i++){
     this.numberOFcustumer.push(Math.ceil( randomValue(this.min,this.max) * this.avg_cookies));
     this.total+=this.numberOFcustumer[i];
+    globalArray[i]+=this.numberOFcustumer[i];
   }
 };
 Citys.prototype.render=function(){
@@ -63,8 +64,21 @@ Citys.prototype.render=function(){
   tr1.appendChild(tdFortotal);
   tdFortotal.textContent=this.total;
 };
+function footerRow(){
+  let tr2=document.createElement('tr');
+  table.appendChild(tr2);
+  let thTotal=document.createElement('th');
+  tr2.appendChild(thTotal);
+  thTotal.textContent='Totals';
+  let td;
+  for(let i=0;i<globalArray.length;i++){
+    td=document.createElement('td');
+    tr2.appendChild(td);
+    td.textContent =globalArray[i];
 
 
+  }
+}
 // eslint-disable-next-line no-undef
 let seatle = new Citys('seatle',23,65,6.3);
 seatle.calculate();
@@ -84,3 +98,5 @@ paris.render();
 let lima  = new Citys('lima',2,16,4.6);
 lima.calculate();
 lima.render();
+
+footerRow();
