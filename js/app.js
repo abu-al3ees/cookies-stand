@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 'use strict';
-
+let countRow=1;
 let hours=['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 function randomValue(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
@@ -48,6 +48,8 @@ Citys.prototype.calculate=function(){
   }
 };
 Citys.prototype.render=function(){
+
+  countRow++;
   let tr1 = document.createElement('tr');
   table.appendChild(tr1);
   let tdFORloca=document.createElement('td');
@@ -104,3 +106,49 @@ lima.calculate();
 lima.render();
 
 footerRow();
+console.log(countRow);
+
+
+
+const form = document.getElementById('cookiesCreater');
+form.addEventListener('submit', cookiesCreater);
+function cookiesCreater(event){
+  event.preventDefault();
+  let locationName=event.target.LocationField.value;
+  let minValue = event.target.minField.value;
+  let maxValue = event.target.maxField.value;
+  let avg_cookies = event.target.avg_cookies.value;
+  let newCity = new Citys(locationName, minValue, maxValue, avg_cookies);
+  table.deleteRow(countRow);
+  newCity.calculate();
+  newCity.render();
+
+  footerRow();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
