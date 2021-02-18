@@ -116,8 +116,11 @@ function cookiesCreater(event){
   event.preventDefault();
   let locationName=event.target.LocationField.value;
   let minValue = event.target.minField.value;
+  minValue=parseInt(minValue);
   let maxValue = event.target.maxField.value;
+  maxValue=parseInt(maxValue);
   let avg_cookies = event.target.avg_cookies.value;
+  avg_cookies=parseFloat(avg_cookies);
   let newCity = new Citys(locationName, minValue, maxValue, avg_cookies);
   table.deleteRow(countRow);
   newCity.calculate();
