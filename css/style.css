@@ -1,39 +1,136 @@
-body{
-    background-color: rgb(123, 148, 168);
-}
-img{
-    margin-right: 190px;
-    margin-top: 119px;
-    padding: auto;
-   
-    width: 231px;
-    position: relative;
-    left: 163px;
-}
-
-a{
-    text-decoration: none;
-    color: beige;
-    font-size: 20px;
-    border: solid 1px rgba(148, 123, 92, 0.993);
-    background-color: black;
-    margin-bottom: 20px;
-    position: relative;
-    right: 200px;
-    top: 44px;
-}
-table{
-    margin: 50px;
-    border: 1px solid red;
-}
-th,td{
-    border:1px solid royalblue;}
-
-    fieldset{
-     width: 50%;
-     margin-left: 270px;
+* {
+    box-sizing: border-box;
     }
-    form input{
-        padding: 10px;
-        margin: 10px
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    
+    }
+    body{
+      font-family: 'Ubuntu', sans-serif;
+      width: 100%;
+    background-color: rgb(217, 224, 224);
+    }
+    header{
+      width: 98%;
+    }
+    header div{
+      margin-top: 17px;
+        width: 253px;
+        margin-left: 35px;
+    }
+    header div img{
+      margin-left: 12px;
+      margin-top: 10px;
+      width: 50px;
+      height: 47px;
+    }
+    header div h1{
+      font-family: 'Lobster', cursive;
+      position: relative;
+      left: 60px;
+      bottom: 55px;
+      font-size: 24px;
+        font-weight: bold;
+    }
+    header div p{
+      font-size: 11px;
+      position: relative;
+      left: 60px;
+      bottom: 47px;
+    }
+    nav ul{
+      position: relative;
+      top: 0px;
+      left: 20px;
+    }
+    header nav ul li{
+      display: inline-block;
+        position: relative;
+        left: 1100px;
+        top: -66px;
+        margin: 5px;
+        
+    }
+    header nav ul li a{
+      color: black;
+      text-decoration: none;
+    }
+    .locations img{
+      width: 34px;
+    }
+    .locations h2{
+  position: relative;
+  left: 66px;
+    bottom: 40px;
+    }
+.contact {
+  position: relative;
+  position: relative;
+    float: right;
+    bottom: 314px;
+    right: 122px;
+}
+    footer{
+      margin-top: -33px;
+      height: 100px;
+    }
+    footer img{
+    
+      margin-left: 50%;
+        position: relative;
+        bottom: 19px;
+    
+    }
+    footer article{
+      text-align: center;
+      padding: 20px;
+      color: lightslategray;
+      margin-top: 0px;
+      margin-top: -24px;
+    
+      
+    }
+    .contianer{
+    padding: 5%;
+    }
+    .imgPizza img{
+      width: 100%;
+      background-size: cover;
+      
+    }
+     .imgSpan {
+      float: left;
+    
+    }
+  
+   
+    
+    .contianer h1{
+      font-size: 40px;
+      font-family: fantasy;
+    }
+    .contianer span{
+      color: lightslategray;
+        margin-right: -11px;
+        font-family: -webkit-pictograph;
+        padding: 6px;
+        position: relative;
+        top: 2px;
+        right: 10px
+    }
+    .contianer .imgSpan img{
+      position: relative;
+      left: 1187px;
+      bottom: 4px;
+    }
+    
+    hr{
+      height: 10px;
+      background-color: lightslategray;
+    }
+    footer hr{
+      height: 2px;
+      width: 100%;
     }
